@@ -17,20 +17,13 @@ Hyperliquid, using the Bitcoin Fear & Greed Index and a Hyperliquid historical t
 │   ├── 01_prep_and_metrics.py   <- Part A: load, clean, align, build metrics
 │   ├── 02_analysis.py           <- Part B: sentiment vs performance/behavior, segments
 │   ├── 03_charts.py             <- chart generation
-│   ├── 04_bonus_model_clustering.py  <- bonus: predictive model + clustering
 │   └── build_notebook.py        <- assembles the .py scripts into the .ipynb
 └── outputs/
     ├── tables/                  <- all intermediate & summary CSVs (+ text logs of stdout)
     └── charts/                  <- all PNG charts (01–10)
 ```
 
-## Setup
 
-```bash
-python3 -m venv .venv
-source .venv/bin/activate
-pip install pandas numpy matplotlib scipy scikit-learn pyarrow jupyter
-```
 
 ## How to run
 
@@ -47,7 +40,7 @@ cd notebook
 python3 01_prep_and_metrics.py
 python3 02_analysis.py
 python3 03_charts.py
-python3 04_bonus_model_clustering.py
+
 ```
 
 ## Data notes (important for reproducibility)
