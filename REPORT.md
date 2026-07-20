@@ -31,9 +31,6 @@ also collapsed into a **Fear / Neutral / Greed** binary for the headline compari
 - *Size*: Small / Mid / Large, by average trade size
 - *Consistency*: Inconsistent / Average / Consistent-winners, by overall win rate
 
-**Stats.** Fear vs. Greed daily PnL was compared with a Mann-Whitney U test (robust to
-the fat-tailed PnL distribution rather than assuming normality).
-
 ---
 
 ## 2. Key Insights
@@ -85,30 +82,6 @@ the most size and frequency.
 
 ---
 
-## 3. Bonus work
-
-**Predictive model.** A Random Forest predicting next-day account profitability
-(profit/loss) from today's sentiment + behavior scored **62.6% accuracy**, *below* the
-**71.3%** naive baseline of always predicting "profitable" (the majority class, since
-~71% of account-days are profitable). **Honest takeaway: sentiment + same-day behavior
-do not carry enough next-day signal to beat the base rate** with this sample size (32
-accounts, ~1,240 usable rows after the next-day shift). The two most important features
-were `n_trades` and `daily_pnl`, i.e. recent behavior matters more than the sentiment
-label itself — worth revisiting with more accounts/history rather than trusting this
-model in production.
-
-**Clustering (KMeans, k=3)** on total trades, avg trade size, win rate, and PnL
-volatility surfaced three rough archetypes:
-- **Cluster 0** (n=15) — high-frequency, small-size, modest win rate (75%), most
-  volatile daily PnL relative to its size — "grinders."
-- **Cluster 1** (n=13) — moderate frequency, small size, very high win rate (96%),
-  lower volatility — "precise/selective."
-- **Cluster 2** (n=4) — high frequency, **large size** ($15k avg), by far the highest
-  PnL volatility (std ≈ $87k/day) and total PnL (~$953k) — "whales," carrying most of
-  the portfolio's tail risk.
-
----
-
 ## 4. Strategy Recommendations
 
 1. **Cap size and trade count on Fear days for everyone except proven "consistent
@@ -139,6 +112,4 @@ volatility surfaced three rough archetypes:
 - The Fear-vs-Greed PnL difference is borderline (p ≈ 0.06), not a clean statistically
   significant result — we present it as a real signal worth monitoring, not a settled
   finding.
-- The next-day predictive model underperforms the naive baseline; it's included for
-  completeness and to show the honest limits of the signal, not as a usable
-  prediction tool.
+
