@@ -1,4 +1,4 @@
-# Hyperliquid Trader Behavior vs. Bitcoin Market Sentiment
+# Hyperliquid Sentiment Analysis
 
 Analysis of how Fear/Greed sentiment relates to trader behavior and performance on
 Hyperliquid, using the Bitcoin Fear & Greed Index and a Hyperliquid historical trade log.
