@@ -17,7 +17,6 @@ Hyperliquid, using the Bitcoin Fear & Greed Index and a Hyperliquid historical t
 │   ├── 01_prep_and_metrics.py   <- Part A: load, clean, align, build metrics
 │   ├── 02_analysis.py           <- Part B: sentiment vs performance/behavior, segments
 │   ├── 03_charts.py             <- chart generation
-│   └── build_notebook.py        <- assembles the .py scripts into the .ipynb
 └── outputs/
     ├── tables/                  <- all intermediate & summary CSVs (+ text logs of stdout)
     └── charts/                  <- all PNG charts (01–10)
